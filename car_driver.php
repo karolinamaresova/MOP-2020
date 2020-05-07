@@ -47,3 +47,7 @@ foreach ($cars as $car) { ?>
 <br>
   <input type="submit" value="přidat" name="submit">
 </form>
+
+<?php 
+
+ include_once "footer.php";

@@ -36,7 +36,7 @@ class Model
     
     public static function getAllDriverRides($idUser)
     {
-        $sql = "SELECT u.id_user, r.id_ride, r.id_car, r.time_left, r.time_arrived,
+        $sql = "SELECT u.id_user, u.firstname, u.surname, r.id_ride, r.id_car, r.time_left, r.time_arrived,
                        r.place_left, r.place_arrived, r.km_before,
                        r.km_after, r.note
                 FROM rides r
@@ -46,6 +46,9 @@ class Model
         $result = Database::query($sql);
         while ($row = $result->fetch_assoc()) {
             $userRides[] = $row;
+        }
+        if (!isset($userRides)) {
+            return null;
         }
         return $userRides;
     }

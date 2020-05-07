@@ -23,7 +23,9 @@
 	<!-- Custom Js -->
 	<script src="assets/js/custom-scripts.js"></script>
 
+	</div>
 
-</body>
+	</div>
+	</body>
 
-</html>
+	</html>

@@ -20,7 +20,7 @@ $cars = Model::getAllCars();
 
 <div class="card">
     <div class="card-action">
-        Vozidla
+        <h1><b>Vozidla</b></h1>
     </div>
     <a class="btn btn-secondary background-btn" href="addCar.php">Přidal vozidlo</a>
     <div class="card-content">
@@ -58,4 +58,6 @@ $cars = Model::getAllCars();
             </table>
         </div>
 
-    
+        <?php 
+
+include_once "footer.php";

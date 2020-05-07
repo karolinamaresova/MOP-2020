@@ -12,4 +12,7 @@ var_dump( $_SESSION["userRole"]);
  
   
  <h3>Jsi přihlášen jako <?=     $roleName['role_name'   ]  ?> </h3>
- 
+  
+<?php 
+
+ include_once "footer.php";

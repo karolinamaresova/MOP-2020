@@ -65,3 +65,6 @@ foreach ($employees as $employee) {
                     </tbody>
                 </table>
             </div>
+            <?php 
+
+ include_once "footer.php";
