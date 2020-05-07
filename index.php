@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include_once  "header.php";
 $roles = Model:: getAllRoles();
 $roleName = Model::getUserRoleName( $_SESSION["userRole"]);

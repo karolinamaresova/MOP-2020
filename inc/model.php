@@ -48,7 +48,6 @@ class Model
             $userRides[] = $row;
         }
         return $userRides;
-    
     }
 
     public static function getIdByEmail($email)
