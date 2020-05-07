@@ -25,6 +25,7 @@ if (!$_SESSION["logged"]) {
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+
 </head>
 
 <body>
@@ -65,22 +66,37 @@ if (!$_SESSION["logged"]) {
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
+                    <?php if (!in_array($_SESSION["userRole"], array(1, 2, 4))) {
+                    header("location: index.php?restcrict=1");
+                            }?>
                     <li>
                         <a href="cars.php" class="waves-effect waves-dark">
                             <i class="fa fa-truck"></i></i>Vozidla</a>
                     </li>
+
+
+                    <?php if (!in_array($_SESSION["userRole"], array(1))) {
+                                header("location: index.php?restcrict=1");}?>
                     <li>
                         <a href="employees.php" class="waves-effect waves-dark">
                             <i class="fa fa-user"></i>Uživatelé</a>
                     </li>
+                    
+
+                    <?php if (!in_array($_SESSION["userRole"], array(1, 4))) {
+                                header("location: index.php?restcrict=1");}?>
                     <li>
                         <a href="rides.php" class="waves-effect waves-dark">
                             <i class="fa fa-road"></i>Jízdy</a>
                     </li>
+                    
+                    <?php if (!in_array($_SESSION["userRole"], array(1, 3))) {
+                                header("location: index.php?restcrict=1");}?>
                     <li>
                         <a href="car_driver.php" class="waves-effect waves-dark">
                             <i class="fa  fa-truck"></i><i class="fa  fa-user"></i>Přidělit vozidlo řidiči</a>
                     </li>
+                  
 
 
 
@@ -94,13 +110,10 @@ if (!$_SESSION["logged"]) {
 
 
         <div id="page-wrapper">
-            
-        <h1 class="page-header">
-                        
-                        </h1>
 
-            
+            <h1 class="page-header">
+
+            </h1>
+
+
             <div id="page-inner">
-
-
-          

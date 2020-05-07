@@ -111,7 +111,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
             </table>
         <?php
         } else {
-            echo "Nemáte evidovány žádné jízdy.";
+            echo "Nemáte evidovány žádné jízdy  .";
         }
         ?>
 
