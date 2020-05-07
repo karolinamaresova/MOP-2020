@@ -9,8 +9,8 @@ http://creativecommons.org/licenses/by/3.0/
     COMMON  STYLES    
 ------------------------------------------------*/
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background: #1F2837;
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(11, 12, 14);
 }
 
  #wrapper {
@@ -19,8 +19,8 @@ body {
 
 #page-wrapper {
     padding: 15px 15px;
-    min-height: 600px;
-    background: #ececec;
+    min-height: 600px;  
+    background: #636161;
 }
 #page-inner {
     width:100%;
@@ -35,7 +35,7 @@ padding:0;
     text-align:center;
 }
 .no-boder {
-    border:1px solid #f3f3f3;
+    border:1px solid#636161;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
@@ -88,7 +88,7 @@ border-radius:0px;
   position: relative;
   top: 55px;
   /* box-shadow: 0 0 10px #757575; */
-  -moz-box-shadow: 0 0 10px #757575;
+  -moz-box-shadow: 0 0 10px #636161;
   /* -webkit-box-shadow: 0 0 10px #757575; */
 }
 .top-navbar .nav > li > a:hover, .top-navbar .nav > li > a:focus {text-decoration: none;background-color: #e0e8f5;color: #fff;}
@@ -131,11 +131,13 @@ border-color: #075CB3;
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);	
 }
-.closed i{color: #adadad;}
+.closed i{color: #504b4b;}
+
+
 /*----------------------------------------------
    DASHBOARD STYLES    
 ------------------------------------------------*/
-.page-header {padding-bottom: 0;margin: 0;border-bottom: 1px solid transparent;text-align: left;background-color: transparent;padding: 0 ;color: #323232;}
+.page-header {padding-bottom: 0;margin: 0;border-bottom: 1px solid transparent;text-align: left;background-color: transparent;padding: 32px 22px 10px 28px;color: #323232;}
 .panel-left{  
 width: 100px;
 height: 100px;background: #0866C6;/* border: 2px solid #4590DA; */
@@ -361,20 +363,20 @@ font-size: 14px;
     MENU STYLES    
 ------------------------------------------------*/
 div#sideNav:hover {
-    color: #1f2837;
+    color: #000000;
 }
 .user-image {
-    margin: 25px auto;
+margin: 20px auto;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
-border-radius: 10px;
+border-radius: 15px;
 max-height:170px;
 max-width:170px;
 }
 .top-navbar{
 margin:0px;
 }
-.top-navbar .navbar-brand {color: #fff;width: 260px;text-align: left;height: 60px;font-size: 24px;font-weight: 700;/* text-transform: uppercase; */line-height: 30px;background: #6d0a0a;}
+.top-navbar .navbar-brand {color: #fff;width: 260px;text-align: left;height: 70px;font-size: 24px;font-weight: 700;/* text-transform: uppercase; */line-height: 30px;background: #8f130a;}
 .navbar-brand b{
 color: #4BD28C;
 }
@@ -414,7 +416,7 @@ padding-top: 4px;
     background-color: #233342 !important;
     color: #fff !important;
 }
-.active-menu i{color: #f44336 !important;}
+.active-menu i{color: #8f130a !important;}
 .arrow {
     float: right;
     margin-top: 8px;
@@ -468,14 +470,14 @@ ul.nav.nav-second-level.collapse.in {background: #121821;}
  
 .navbar-side {
 	border:none;
-	background: #1F2837;
+	background:  rgb(11, 12, 14);
 }
 .top-navbar {
-	background: #6d0a0a;
+	background: #8f130a;
 	border-bottom:none;
 }
 .top-navbar .nav > li > a > i {margin-right: 0;}
-.top-navbar .navbar-brand:hover {color: #FFFFFF;background-color: #6d0a0a86}
+.top-navbar .navbar-brand:hover {color: #FFFFFF;background-color: #8f130a;}
 .dropdown-user li {
 margin: 8px 0;
 }
@@ -483,7 +485,7 @@ margin: 8px 0;
 .navbar-header {
     background: transparent;
 }
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: #9e0f0f;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: #8f130a;}
 .navbar-default .navbar-toggle {border-color: #ffffff;}
 
 .navbar-default .navbar-toggle .icon-bar {background-color: #ffffff;}
@@ -502,19 +504,20 @@ margin: 8px 0;
     float: left;
     left: 0;
     z-index: 3;
-    color: #f44336;
+    color: #8f130a;
     cursor:pointer;
     border-radius: 0;
-    width: 14px;
+    width: 20px;
     font-size: 44px;
     line-height: 33px;
     margin: 7px 0 0 13px;
     background: #ffffff;
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 34px;
-    padding-top: 5px;
+    line-height: 30px;
+    padding-right: 3px;
+    
     margin-top: 14px;
     border-radius: 50%;
 }
@@ -522,7 +525,7 @@ ul.dropdown-menu.dropdown-messages li a div {
   padding: 2px 0;
 }
 #page-wrapper{
-	background: #e0e8f5;
+	background: #adadad;
 }
 .dashboard-cards .card-stacked{
 	color:#fff;
@@ -710,7 +713,7 @@ padding: 0 15px 0px 15px;
  @media(max-width:768px) {
 	  
 	 .navbar-header {
-		background: #f44336;
+		background: #8f130a;
 	}
 	.navbar-side {
 		z-index: 2;

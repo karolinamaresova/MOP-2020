@@ -1,6 +1,6 @@
 <?php
 include_once 'header.php';
-if (!in_array($_SESSION["userRole"], array(1,2,3,4))) {
+if (!in_array($_SESSION["userRole"], array(1,2,3,))) {
     header("location: index.php?restcrict=1");
 }
 

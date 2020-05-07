@@ -4,6 +4,8 @@ session_start();
 if (!$_SESSION["logged"]) {
     header("location:login.php");
 }
+ 
+
 
 
 ?>
@@ -34,22 +36,16 @@ if (!$_SESSION["logged"]) {
         <!-- top navigation  -->
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse"
-                    data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+               
                 <a class="navbar-brand waves-effect waves-dark" href="index.php">
                     <i class="fa fa-truck"></i> Vozový park</a>
 
-                <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+                <div id="sideNav" href=""><i class="fa fa-angle-double-left"></i></div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
                 <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i
-                            class="fa fa-user fa-fw"></i> <b>John Doe</b> <i
+                            class="fa fa-user fa-fw"></i>  <i
                             class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
@@ -66,36 +62,35 @@ if (!$_SESSION["logged"]) {
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <?php if (!in_array($_SESSION["userRole"], array(1, 2, 4))) {
-                    header("location: index.php?restcrict=1");
-                            }?>
+                    <?php if (in_array($_SESSION["userRole"], array(1, 2, ))){?>
                     <li>
                         <a href="cars.php" class="waves-effect waves-dark">
                             <i class="fa fa-truck"></i></i>Vozidla</a>
                     </li>
+<?php }?>
 
 
-                    <?php if (!in_array($_SESSION["userRole"], array(1))) {
-                                header("location: index.php?restcrict=1");}?>
+                    <?php if (in_array($_SESSION["userRole"], array(1))) {?>
                     <li>
                         <a href="employees.php" class="waves-effect waves-dark">
                             <i class="fa fa-user"></i>Uživatelé</a>
                     </li>
+                    <?php }?>
                     
 
-                    <?php if (!in_array($_SESSION["userRole"], array(1, 4))) {
-                                header("location: index.php?restcrict=1");}?>
+                    <?php if (in_array($_SESSION["userRole"], array(1, 4))) {?>
                     <li>
                         <a href="rides.php" class="waves-effect waves-dark">
                             <i class="fa fa-road"></i>Jízdy</a>
                     </li>
+                    <?php }?>
                     
-                    <?php if (!in_array($_SESSION["userRole"], array(1, 3))) {
-                                header("location: index.php?restcrict=1");}?>
+                    <?php if (in_array($_SESSION["userRole"], array(1, 3))) {?>
                     <li>
                         <a href="car_driver.php" class="waves-effect waves-dark">
                             <i class="fa  fa-truck"></i><i class="fa  fa-user"></i>Přidělit vozidlo řidiči</a>
                     </li>
+                    <?php }?>
                   
 
 

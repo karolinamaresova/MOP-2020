@@ -5,8 +5,8 @@ $roleName = Model::getUserRoleName( $_SESSION["userRole"]);
         
 
 var_dump($_SESSION["userRole"]);
-var_dump($roles);
-var_dump( $_SESSION["userRole"]);
+ var_dump($roles);
+ var_dump( $_SESSION["userId"]);
 ?>
  
  
