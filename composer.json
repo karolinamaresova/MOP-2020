@@ -1,0 +1,17 @@
+{
+    "name": "karolina/mop",
+    "description": "??",
+    "authors": [
+        {
+            "name": "karolinamaresova",
+            "email": "maresova.karolina@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+    "classmap": [
+        "inc/"
+    ]
+}
+}
