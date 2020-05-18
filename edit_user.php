@@ -69,5 +69,11 @@ $user = Model::getUserById($idUser);
 
 
   <br>
-  <input type="submit" value="upravit" name="submit">
+  <button class="btn waves-effect waves-light black" type="submit" value="přidat" name="submit">UPRAVIT
+              <i class="material-icons right">send</i>
+            </button>
 </form>
+
+<?php 
+
+ include_once "footer.php";

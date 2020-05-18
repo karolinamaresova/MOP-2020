@@ -38,7 +38,7 @@ class Model
     {
         $sql = "SELECT u.id_user, u.firstname, u.surname, r.id_ride, r.id_car, r.time_left, r.time_arrived,
                        r.place_left, r.place_arrived, r.km_before,
-                       r.km_after, r.note
+                       r.km_after, r.note, r.state
                 FROM rides r
                 JOIN users_rides ur ON r.id_ride = ur.id_ride
                 JOIN users u ON ur.id_user = u.id_user
@@ -263,25 +263,25 @@ class Model
         return Database::query($sql);
     }
 
-
+    //přidání jízdy
     public static function addRide($idUser, $car, $timeLeft, $timeArrived, $placeLeft, $placeArrived, $kmBefore, $kmAfter, $note, $state)
     {
         $timeLeft = date("Y-m-d H:i:s", strtotime($timeLeft));
         $timeArrived = date("Y-m-d H:i:s", strtotime($timeArrived));
 
         $sql = "INSERT INTO `rides` (`id_user`, `id_car`, `time_left`, `time_arrived`, `place_left`, `place_arrived`, `km_before`, `km_after`, `note`, `state`)
-        VALUES ('$idUser', '$car', '$timeLeft', '$timeArrived', '$placeLeft', '$placeArrived', '$kmBefore', '$kmAfter', '$note', '$state');";
+                VALUES ('$idUser', '$car', '$timeLeft', '$timeArrived', '$placeLeft', '$placeArrived', '$kmBefore', '$kmAfter', '$note', '$state');";
         $result = Database::query($sql);
         
         $sql1 = "SELECT id_ride FROM rides ORDER BY id_ride DESC LIMIT 1";
         $result1 = Database::query($sql1);
         $ride =  $result1->fetch_assoc();
     
-        $sql2 = sprintf("INSERT INTO cars_rides (id_car, id_ride)
-        VALUES ('$car', '%s')", $ride['id_ride']);
-        $result2 = Database::query($sql2);
+        //  $sql2 = sprintf("INSERT INTO cars_rides (id_car, id_ride)
+        //  VALUES ('$car', '%s')", $ride['id_ride']);
+        // $result2 = Database::query($sql2);
 
-        return $result2;
+        //  return $result2;
     }
 
 
@@ -295,7 +295,6 @@ class Model
         while ($row = $result->fetch_assoc()) {
             $cars[] = $row;
         }
-        var_dump($cars);
         return $cars;
     }
 
@@ -307,6 +306,4 @@ class Model
         VALUES ('$idUser', '$idCar')";
         return Database::query($sql);
     }
-
-    
 }

@@ -23,9 +23,9 @@ if (isset($submit)) {
     $kmBefore = filter_input(INPUT_POST, 'kmBefore');
     $kmAfter = filter_input(INPUT_POST, 'kmAfter');
     $note = filter_input(INPUT_POST, 'note');
-    $status = filter_input(INPUT_POST, 'status');
+    $state = filter_input(INPUT_POST, 'state');
 
-    $isEdited =  Model::editRides($id_ride, $idUser, $idCar, $timeLeft, $timeArrived, $placeLeft, $placeArrived, $kmBefore, $kmAfter, $note, $status );
+    $isEdited =  Model::editRides($id_ride, $idUser, $idCar, $timeLeft, $timeArrived, $placeLeft, $placeArrived, $kmBefore, $kmAfter, $note, $state );
 $ride = Model::getRideById($id_ride);
 
     if ($isEdited) {
@@ -85,7 +85,8 @@ $ride = Model::getRideById($id_ride);
     value="<?= $ride['note'] ?>">
 
     <label for="name">Status</label>
-  <input type="text" name="note" class="form-control"
+  <input type="text" name="state" class="form-control"
+  
     value="<?= $ride['state'] ?>">
 
 
@@ -93,5 +94,11 @@ $ride = Model::getRideById($id_ride);
 
 
   <br>
-  <input type="submit" value="upravit" name="submit">
+  <button class="btn waves-effect waves-light black" type="submit" value="přidat" name="submit">UPRAVIT
+              <i class="material-icons right">send</i>
+            </button>
 </form>
+
+<?php 
+
+ include_once "footer.php";

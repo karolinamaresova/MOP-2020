@@ -49,3 +49,7 @@ $carRides = Model::getRidesByCar(filter_input(INPUT_GET, 'id_car'));
             
         </tbody>
     </table>
+    
+    <?php 
+
+ include_once "footer.php";

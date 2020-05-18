@@ -16,6 +16,7 @@ if (!$_SESSION["logged"]) {
     <title>Maturitní odborná práce</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -27,6 +28,11 @@ if (!$_SESSION["logged"]) {
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+   
+</head>
 
 </head>
 
@@ -40,12 +46,12 @@ if (!$_SESSION["logged"]) {
                 <a class="navbar-brand waves-effect waves-dark" href="index.php">
                     <i class="fa fa-truck"></i> Vozový park</a>
 
-                <div id="sideNav" href=""><i class="fa fa-angle-double-left"></i></div>
+                <div id="sideNav" href=""><i class="fa fa-arrow-left"></i></div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
                 <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i
-                            class="fa fa-user fa-fw"></i>  <i
+                            class="fa fa-user fa-fw"></i>přihlášený uživatel <i
                             class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>

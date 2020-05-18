@@ -10,7 +10,8 @@ if (!empty($submit)) {
     if (Model::authenticate($email, $password)) {
         $_SESSION["logged"] = true;
         $_SESSION["userRole"] = Model::getUserRole($email);
-        $_SESSION["userId"] = Model::getIdByEmail($email);
+		$_SESSION["userId"] = Model::getIdByEmail($email);
+		
       
         header("location:index.php");
     } else {

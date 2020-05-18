@@ -30,10 +30,10 @@ $employees = Model::getAllUsers();
 
     <div class="card">
         <div class="card-action">
-            Uživatelé
+        <h1><b>UŽIVATELÉ</b></h1>
         </div>
         <div class="card-content">
-            <a class="btn btn-secondary background-btn" href="addUser.php">Přidat uživatele</a>
+        <a class="btn-floating btn-medium waves-effect waves-light black" href="addUser.php" ><i class="material-icons">add</i></a>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>

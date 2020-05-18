@@ -17,12 +17,12 @@ $cars = Model::getAllCars();
 
 
 
-
 <div class="card">
     <div class="card-action">
-        <h1><b>Vozidla</b></h1>
+    <a class="btn-floating btn-medium waves-effect waves-light black" href="addCar.php" ><i class="material-icons">add</i></a>
+      <h1><b>Vozidla</b></h1> 
     </div>
-    <a class="btn btn-secondary background-btn" href="addCar.php">Přidal vozidlo</a>
+    
     <div class="card-content">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">

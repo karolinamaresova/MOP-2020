@@ -26,28 +26,62 @@ if (isset($submit)) {
 
 <form action="car_driver.php" method="post">
 
-<label for="id_user">Řidič</label><br>
-<select id="id_user" name="id_user">
-<?php 
-foreach ($users as $user) { ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-action">
+                    <h3><b>PŘIDĚLIT VOZIDLO ŘIDIČI</b></h3>
+                </div>
+                <div class="card-content">
+                    <form class="col s12">
 
-<option value="<?= $user['id_user'] ?> "> <?= $user['firstname'] . $user['surname']?> <?php
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="id_user">Řidič</label><br><br>
+                                <select id="id_user" name="id_user">
+                                    <?php
+foreach ($users as $user) {
+    ?>
+
+                                    <option value="<?= $user['id_user'] ?> ">
+                                        <?= $user['firstname'] . $user['surname']?> <?php
 } ?>
-</select><br> 
+                                </select><br>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label for="id_car">Vozidlo</label><br><br>
+                                <select id="id_car" name="id_car">
+                                    <?php
+foreach ($cars as $car) {
+        ?>
+
+                                    <option value="<?= $car['id_car']?> "> <?= $car['SPZ'] ?> <?php
+    } ?>
+                                </select><br>
+                                <br>
+                                <button class="btn waves-effect waves-light black" type="submit" value="přidat"
+                                    name="submit">PŘIDĚLIT
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="clearBoth"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<label for="id_car">Vozidlo</label><br>
-<select id="id_car" name="id_car">
-<?php 
-foreach ($cars as $car) { ?>
 
-<option value="<?= $car['id_car']?> "> <?= $car['SPZ'] ?> <?php
-} ?>
-</select><br> 
-<br>
-  <input type="submit" value="přidat" name="submit">
+
+
 </form>
 
-<?php 
+<?php
 
  include_once "footer.php";
