@@ -1,39 +1,23 @@
 <?php
+
 include_once "header.php";
 if (!in_array($_SESSION["userRole"], array(1))) {
     header("location: index.php?restcrict=1");
 }
-
-
-
-?>
-
-
-
-<body>
-    <?php
 $employees = Model::getAllUsers();
-
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
 
     <div class="card">
         <div class="card-action">
-        <h1><b>UŽIVATELÉ</b></h1>
+        <h1>
+            <b>UŽIVATELÉ</b>
+            <a class="btn-floating btn-medium waves-effect waves-light black" href="addUser.php">
+                <i class="material-icons">add</i>
+            </a>
+        </h1>
         </div>
         <div class="card-content">
-        <a class="btn-floating btn-medium waves-effect waves-light black" href="addUser.php" ><i class="material-icons">add</i></a>
+        
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
@@ -50,8 +34,8 @@ $employees = Model::getAllUsers();
                     <tbody>
 
                         <?php
-foreach ($employees as $employee) {
-    ?><tr>
+                        foreach ($employees as $employee) {
+                            ?><tr>
                             <td> <?php echo $employee['id_user'] ?></td>
                             <td> <?php echo $employee['firstname'] ?></td>
                             <td> <?php echo $employee['surname'] ?></td>
@@ -59,12 +43,12 @@ foreach ($employees as $employee) {
                             <td> <a href="edit_user.php?id_user=<?= $employee['id_user'] ?>">upravit </a> </td>
                             <td> </td>
                         </tr> <?php
-}
-?>
+                        }
+                        ?>
 
                     </tbody>
                 </table>
             </div>
-            <?php 
+            <?php
 
- include_once "footer.php";
+            include_once "footer.php";
