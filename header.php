@@ -94,7 +94,7 @@ if (!$_SESSION["logged"]) {
                     <?php if (in_array($_SESSION["userRole"], array(1, 3))) {?>
                     <li>
                         <a href="car_driver.php" class="waves-effect waves-dark">
-                            <i class="fa  fa-truck"></i><i class="fa  fa-user"></i>Přidělit vozidlo řidiči</a>
+                            <i class="fa  fa-truck"></i><i class="fa  fa-user"></i><br>Přidělit vozidlo řidiči</a>
                     </li>
                     <?php }?>
                   

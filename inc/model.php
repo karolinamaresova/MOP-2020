@@ -278,6 +278,7 @@ class Model
         $ride =  $result1->fetch_assoc();
         
 var_dump($sql);
+
         //  $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
         //  VALUES ('$idUser', '%s')", $ride['id_ride']);
         // $result2 = Database::query($sql2);
