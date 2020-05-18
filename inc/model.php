@@ -22,9 +22,8 @@ class Model
     {
         $sql = "SELECT c.id_car, r.id_ride, r.id_car, r.time_left, r.time_arrived, r.place_left, r.place_arrived, r.km_before,
         r.km_after, r.note
-                FROM cars c 
-                JOIN cars_rides cr ON c.id_car = cr.id_car
-                JOIN rides r ON cr.id_ride = r.id_ride
+                FROM rides r
+                JOIN cars c ON c.id_car = r.id_car             
                 WHERE c.id_car = '$idCar'";
         $result = Database::query($sql);
         while ($row = $result->fetch_assoc()) {
@@ -277,15 +276,13 @@ class Model
         $result1 = Database::query($sql1);
         $ride =  $result1->fetch_assoc();
         
-var_dump($sql);
+        var_dump($sql);
 
         //  $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
         //  VALUES ('$idUser', '%s')", $ride['id_ride']);
         // $result2 = Database::query($sql2);
 
         //  return $result2;
-
-       
     }
 
 
