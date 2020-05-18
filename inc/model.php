@@ -36,12 +36,13 @@ class Model
     
     public static function getAllDriverRides($idUser)
     {
-        $sql = "SELECT u.id_user, u.firstname, u.surname, r.id_ride, r.id_car, r.time_left, r.time_arrived,
+        $sql = "SELECT u.id_user, u.firstname, u.surname, r.id_ride, c.type, c.SPZ, r.time_left, r.time_arrived,
                        r.place_left, r.place_arrived, r.km_before,
                        r.km_after, r.note, r.state
                 FROM rides r
                 JOIN users_rides ur ON r.id_ride = ur.id_ride
                 JOIN users u ON ur.id_user = u.id_user
+                JOIN cars c ON c.id_car = r.id_car
                 WHERE u.id_user = '$idUser'";
         $result = Database::query($sql);
         while ($row = $result->fetch_assoc()) {
@@ -170,12 +171,11 @@ class Model
 
     public static function getAllRides()
     {
-        $sql = "SELECT r.id_ride, u.firstname, u.surname, c.type, r.time_left, r.time_arrived, r.place_left, r.place_arrived, r.km_before, r.km_after, r.note, r.state
+        $sql = "SELECT r.id_ride, u.firstname, u.surname,c.type,  c.SPZ,  r.time_left, r.time_arrived, r.place_left, r.place_arrived, r.km_before, r.km_after, r.note, r.state
         FROM rides r
-        JOIN cars_rides cr ON r.id_ride = cr.id_ride
-        JOIN cars c ON cr.id_car = c.id_car
-        JOIN users_rides ur ON r.id_ride = ur.id_ride
-        JOIN users u ON ur.id_user = u.id_user;";
+        JOIN users_rides ur ON r.id_ride  = ur.id_ride
+        JOIN users u ON ur.id_user = u.id_user
+        JOIN cars c ON r.id_car = c.id_car;";
         $result = Database::query($sql);
         $rides = array();
         while ($row = $result->fetch_assoc()) {
@@ -276,12 +276,15 @@ class Model
         $sql1 = "SELECT id_ride FROM rides ORDER BY id_ride DESC LIMIT 1";
         $result1 = Database::query($sql1);
         $ride =  $result1->fetch_assoc();
-    
-        //  $sql2 = sprintf("INSERT INTO cars_rides (id_car, id_ride)
-        //  VALUES ('$car', '%s')", $ride['id_ride']);
+        
+var_dump($sql);
+        //  $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
+        //  VALUES ('$idUser', '%s')", $ride['id_ride']);
         // $result2 = Database::query($sql2);
 
         //  return $result2;
+
+       
     }
 
 

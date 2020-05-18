@@ -43,7 +43,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
 
                                 <td><?= $ride['id_ride'] ?></td>
 
-                                <td><?= $ride['type'] ?></td>
+                                <td><?= $ride['type'] . " " . $ride['SPZ']?></td>
                                 <th><?= $ride['firstname'] . " " . $ride['surname'] ?></td>
                                 <td><?= date("j.n.Y - G:i:s", strtotime($ride['time_left'])) ?></td>
                                 <td><?= date("j.n.Y - G:i:s", strtotime($ride['time_arrived'])) ?></td>
@@ -93,8 +93,8 @@ if (!is_null($driverRides)) {
                 ?><tr>
 
                                 <td><?= $driverRide['id_ride'] ?></td>
-                                <td><?= $driverRide['id_car'] ?></td>
-                                <th><?= $driverRide['firstname'] . $driverRide['surname'] ?></td>
+                                <td><?= $driverRide['type'] . " " . $driverRide['SPZ'] ?></td>
+                                <th><?= $driverRide['firstname'] . " " . $driverRide['surname'] ?></td>
                                 <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_left'])) ?></td>
                                 <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_arrived'])) ?></td>
                                 <td><?= $driverRide['place_left'] ?></td>

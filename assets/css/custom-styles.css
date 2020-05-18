@@ -129,9 +129,9 @@ border-color: #075CB3;
 .closed{
 	-ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);	
+    transform: rotatey(180deg);	
 }
-.closed i{color: #504b4b;}
+.closed i{color: #000000;}
 
 
 /*----------------------------------------------
@@ -473,7 +473,7 @@ ul.nav.nav-second-level.collapse.in {background: #121821;}
 	background:  rgb(11, 12, 14);
 }
 .top-navbar {
-	background: #8f130a;
+	background: #e0dfdf;
 	border-bottom:none;
 }
 .top-navbar .nav > li > a > i {margin-right: 0;}
@@ -511,7 +511,7 @@ margin: 8px 0;
     font-size: 44px;
     line-height: 33px;
     margin: 7px 0 0 13px;
-    background: #ffffff;
+   
     width: 40px;
     height: 40px;
     text-align: center;
@@ -525,7 +525,7 @@ ul.dropdown-menu.dropdown-messages li a div {
   padding: 2px 0;
 }
 #page-wrapper{
-	background: #cac9c9;
+	background: #e0dfdf;
 }
 .dashboard-cards .card-stacked{
 	color:#fff;

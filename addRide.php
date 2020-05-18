@@ -32,7 +32,6 @@ if (isset($submit)) {
 
 
 
-
 ?>
 
 <form action="addRide.php" method="post">
@@ -48,6 +47,7 @@ if (isset($submit)) {
     if ($_SESSION['userRole'] == 4) {
         $getUsersCars = Model::getCarsByUserId($_SESSION['userId']['id_user']);
         $currentUser = Model::getUserById($_SESSION['userId']['id_user']);
+        var_dump( $currentUser);
         ?>
 
           <form class="col s12">
