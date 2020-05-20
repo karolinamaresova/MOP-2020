@@ -30,7 +30,7 @@ if (isset($submit)) {
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-action">
-                    <h3><b>PŘIDĚLIT VOZIDLO ŘIDIČI</b></h3>
+                    <h2><b>PŘIDĚLIT VOZIDLO ŘIDIČI</b></h2>
                 </div>
                 <div class="card-content">
                     <form class="col s12">
@@ -44,7 +44,7 @@ foreach ($users as $user) {
     ?>
 
                                     <option value="<?= $user['id_user'] ?> ">
-                                        <?= $user['firstname'] . $user['surname']?> <?php
+                                        <?= $user['firstname'] . " " . $user['surname']?> <?php
 } ?>
                                 </select><br>
                             </div>
@@ -58,7 +58,7 @@ foreach ($users as $user) {
 foreach ($cars as $car) {
         ?>
 
-                                    <option value="<?= $car['id_car']?> "> <?= $car['SPZ'] ?> <?php
+                                    <option value="<?= $car['id_car']?> "> <?= $car['type'] . " -   ". $car['SPZ'] ?> <?php
     } ?>
                                 </select><br>
                                 <br>

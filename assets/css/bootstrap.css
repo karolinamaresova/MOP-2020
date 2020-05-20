@@ -219,12 +219,17 @@ optgroup {
 
 table {
     border-spacing: 0;
-    border-collapse: collapse
+    border-collapse: collapse;
+    
 }
 
 td,
 th {
-    padding: 0
+    padding: 0;
+    text-align: center;
+    
+   
+    
 }
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
@@ -265,7 +270,9 @@ th {
     }
 
     thead {
-        display: table-header-group
+        display: table-header-group;
+        
+        
     }
 
     img,
@@ -308,11 +315,13 @@ th {
 
     .table {
         border-collapse: collapse !important
+
     }
 
     .table td,
     .table th {
         background-color: #fff !important
+        
     }
 
     .table-bordered td,
@@ -2992,12 +3001,12 @@ th {
 .table>thead>tr>th {
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    text-align: center;
     border-top: 1px solid #ddd
 }
 
 .table>thead>tr>th {
-    vertical-align: bottom;
+    vertical-align: center;
     border-bottom: 2px solid #ddd
 }
 

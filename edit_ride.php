@@ -37,68 +37,102 @@ $ride = Model::getRideById($id_ride);
 }
 
 
-
-
-
-
-
-
-
-
 ?>
 <form action="" method="post">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-action">
+          Upravit jízdu
+        </div>
+        <div class="card-content">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">User</label><br>
+                <input type="text" name="user" class="form-control" value="<?= $ride['id_user'] ?>">
+              </div>
+            </div>
 
-<label for="name">User</label>
-  <input type="text" name="user" class="form-control" 
-    value="<?= $ride['id_user'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">ID Car</label><br>
+                <input type="text" name="car" class="form-control" value="<?= $ride['id_car'] ?>">
 
-  <label for="name">ID Car</label>
-  <input type="text" name="car" class="form-control" 
-    value="<?= $ride['id_car'] ?>">
+              </div>
+            </div>
 
-  <label for="name">Time Left</label>
-  <input type="text" name="timeLeft" class="form-control" 
-    value="<?= $ride['time_left'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Time Left</label><br>
+                <input type="text" name="timeLeft" class="form-control" value="<?= $ride['time_left'] ?>">
+              </div>
+            </div>
 
-  <label for="name">Time Arrived</label>
-  <input type="text" name="timeArrived" class="form-control" 
-    value="<?= $ride['time_arrived'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Time Arrived</label><br>
+                <input type="text" name="timeArrived" class="form-control" value="<?= $ride['time_arrived'] ?>">
+              </div>
+            </div>
 
-  <label for="name">Place Left</label>
-  <input type="text" name="placeLeft" class="form-control" 
-    value="<?= $ride['place_left'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Place Left</label><br>
+                <input type="text" name="placeLeft" class="form-control" value="<?= $ride['place_left'] ?>">
+              </div>
+            </div>
 
-  <label for="name">Place Arrived</label>
-  <input type="text" name="placeArrived" class="form-control"
-    value="<?= $ride['place_arrived'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Place Arrived</label><br>
+                <input type="text" name="placeArrived" class="form-control" value="<?= $ride['place_arrived'] ?>">
+              </div>
+            </div>
 
-  <label for="name">KM Before</label>
-  <input type="text" name="kmBefore" class="form-control" 
-    value="<?= $ride['km_before'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">KM Before</label><br>
+                <input type="text" name="kmBefore" class="form-control" value="<?= $ride['km_before'] ?>">
+              </div>
+            </div>
 
-  <label for="name">KM After</label>
-  <input type="text" name="kmAfter" class="form-control"
-  value="<?= $ride['km_after'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">KM After</label><br>
+                <input type="text" name="kmAfter" class="form-control" value="<?= $ride['km_after'] ?>">
+              </div>
+            </div>
 
-  <label for="name">Note</label>
-  <input type="text" name="note" class="form-control"
-    value="<?= $ride['note'] ?>">
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Note</label><br>
+                <input type="text" name="note" class="form-control" value="<?= $ride['note'] ?>">
 
-    <label for="name">Status</label>
-  <input type="text" name="state" class="form-control"
-  
-    value="<?= $ride['state'] ?>">
+              </div>
+            </div>
 
-
-
-
-
-  <br>
-  <button class="btn waves-effect waves-light black" type="submit" value="přidat" name="submit">UPRAVIT
+            <div class="row">
+              <div class="input-field col s12">
+                <label for="name">Status</label><br>
+              
+                <select id="state" name="state">
+                  <option value="aktivní" selected>Aktivní</option>
+                  <option value="neaktivní">Neaktivní</option>
+                  </select><br>
+              </div>
+            </div>
+            <br>
+            <button class="btn waves-effect waves-light black" type="submit" value="přidat" name="submit">UPRAVIT
               <i class="material-icons right">send</i>
             </button>
-</form>
+          </form>
+          <div class="clearBoth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<?php 
+  <?php 
 
  include_once "footer.php";

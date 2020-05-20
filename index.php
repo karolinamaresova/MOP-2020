@@ -9,7 +9,7 @@ $roleName = Model::getUserRoleName( $_SESSION["userRole"]);
  
  
   
- <h3>Jsi přihlášen jako <?=     $roleName['role_name'   ]  ?> </h3>
+ <img src="https://www.tapa-global.org/fileadmin/_processed_/csm_4-1_9589c2a54c.png" alt="trucks">
   
 <?php 
 

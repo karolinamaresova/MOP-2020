@@ -23,11 +23,13 @@ $employees = Model::getAllUsers();
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Role</th>
                             <th>Jméno</th>
                             <th>Přijmení</th>
                             <th>Email</th>
-                            <th>Úprava</th>
                             <th>Stav</th>
+                            <th><i class="fa fa-edit small"></i></th>
+                            
 
                         </tr>
                     </thead>
@@ -37,11 +39,12 @@ $employees = Model::getAllUsers();
                         foreach ($employees as $employee) {
                             ?><tr>
                             <td> <?php echo $employee['id_user'] ?></td>
+                            <td> <?php echo $employee['role_name'] ?></td>
                             <td> <?php echo $employee['firstname'] ?></td>
                             <td> <?php echo $employee['surname'] ?></td>
                             <td> <?php echo $employee['email'] ?></td>
-                            <td> <a href="edit_user.php?id_user=<?= $employee['id_user'] ?>">upravit </a> </td>
-                            <td> </td>
+                            <td> <?php echo $employee['state'] ?></td></td>
+                            <td> <a href="edit_user.php?id_user=<?= $employee['id_user'] ?>"><i class="fa fa-edit"></i </a> </td>
                         </tr> <?php
                         }
                         ?>

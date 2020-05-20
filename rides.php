@@ -37,7 +37,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                     <th>Počet kilometrů</th>
                                     <th>Poznámka</th>
                                     <th>Status</th>
-                                    <th>Úprava</th>
+                                    <th><i class="fa fa-edit small"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,11 +54,11 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                         <td><?= date("j.n.Y - G:i:s", strtotime($ride['time_arrived'])) ?></td>
                                         <td><?= $ride['place_left'] ?></td>
                                         <td><?= $ride['place_arrived'] ?></td>
-                                        <td><?= $driverRide['km_after'] - $driverRide['km_before'] ?></td>
+                                        <td><?= $ride['km_after'] - $ride['km_before'] ?></td>
                                         <td><?= $ride['note'] ?></td>
                                         <td><?= $ride['state'] ?></td>
                                         <td>
-                                            <a href="edit_ride.php?id_ride=<?= $ride['id_ride'] ?>">upravit </a>
+                                            <a href="edit_ride.php?id_ride=<?= $ride['id_ride'] ?>"><i class="fa fa-edit"></i></a>
                                         </td>
                                     </tr>
                                 <?php
@@ -85,7 +85,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                         <th>Počet kilometrů</th>
                                         <th>Poznámka</th>
                                         <th>Status</th>
-                                        <th>Úprava</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,7 +99,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                             <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_left'])) ?></td>
                                             <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_arrived'])) ?></td>
                                             <td><?= $driverRide['place_left'] ?></td>
-                                            <td><?= $driverRide['time_arrived'] ?></td>
+                                            <td><?= $driverRide['place_arrived'] ?></td>
                                             <td><?= $driverRide['km_after'] - $driverRide['km_before'] ?></td>
                                             <td><?= $driverRide['note'] ?></td>
                                             <td><?= $driverRide['state'] ?></td>

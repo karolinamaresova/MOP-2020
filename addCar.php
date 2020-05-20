@@ -35,7 +35,7 @@ if (isset($submit)) {
     <div class="col-lg-12">
       <div class="card">
         <div class="card-action">
-          <h3><b>PŘIDAT VOZIDLA</b></h3>
+          <h2><b>PŘIDAT VOZIDLO</b></h2>
         </div>
         <div class="card-content">
           <form class="col s12">

@@ -158,7 +158,8 @@ class Model
 
     public static function getAllUsers()
     {
-        $sql = 'SELECT * FROM users;';
+        $sql = 'SELECT * FROM users u
+                JOIN roles r ON u.id_role = r.id_role ;';
         $result = Database::query($sql);
         while ($row = $result->fetch_assoc()) {
             $employees[] = $row;
@@ -205,14 +206,15 @@ class Model
     }
 
     
-    public static function editUser($id_user, $id_role, $firstname, $surname, $email, $password = "")
+    public static function editUser($id_user, $id_role, $firstname, $surname, $email,$password = "", $state)
     {
         if (empty($password)) {
             $sql = "UPDATE users SET 
             id_role = $id_role,
             firstname = '$firstname',
             surname = '$surname',
-            email = '$email'
+            email = '$email',
+            state = '$state'
             WHERE id_user = $id_user
         ";
         } else {
@@ -222,7 +224,8 @@ class Model
             firstname = '$firstname',
             surname = '$surname',
             email = '$email',
-            password = '$hashedPassword'
+            password = '$hashedPassword',
+            state = '$state'
             WHERE id_user = $id_user
             ";
         }
@@ -254,12 +257,13 @@ class Model
         return  Database::query($sql);
     }
 
-    public static function addUser($role, $firstname, $surname, $email, $password)
+    public static function addUser($role, $firstname, $surname, $email, $password, $state)
     {
         $hashedPassword = md5($password . self::SALT);
-        $sql = "INSERT INTO users (id_role, firstname, surname, email, password)
-        VALUES ('$role', '$firstname', '$surname', '$email', '$hashedPassword')";
+        $sql = "INSERT INTO users (id_role, firstname, surname, email, password, state)
+        VALUES ('$role', '$firstname', '$surname', '$email', '$hashedPassword', '$state')";
         return Database::query($sql);
+       
     }
 
     //přidání jízdy
@@ -278,11 +282,11 @@ class Model
         
         var_dump($sql);
 
-        //  $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
-        //  VALUES ('$idUser', '%s')", $ride['id_ride']);
-        // $result2 = Database::query($sql2);
+         $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
+        VALUES ('$idUser', '%s')", $ride['id_ride']);
+         $result2 = Database::query($sql2);
 
-        //  return $result2;
+          return $result2;
     }
 
 
