@@ -194,7 +194,6 @@ class Model
     public static function editCar($type, $SPZ, $idCar)
     {
         $sql = "UPDATE cars SET 
-        type = '$type',
         SPZ = '$SPZ'
         WHERE id_car = $idCar ";
         return  Database::query($sql);

@@ -106,7 +106,7 @@ if (isset($submit)) {
                   <label for="select2">Vozidlo</label><br>
                   <select id="select2" name="car" class="form-control">
                     <?php
-                    foreach ($getUsersCars as $car) {
+                    foreach ($cars as $car) {
                     ?>
                       <option value="<?= $car['id_car'] ?> "> <?= $car['type'] . " " . $car['SPZ'] ?></option> <?php
                                                                                                               } ?>

@@ -10,14 +10,13 @@ $cars = Model::GetAllCars();
 $idCar = filter_input(INPUT_GET, 'id_car');
 $submit = filter_input(INPUT_POST, 'submit');
 
-$type = filter_input(INPUT_POST, 'type');
 $SPZ = filter_input(INPUT_POST, 'SPZ');
 
 
 
 
 if (isset($submit)) {
-    Model::editCar($type, $SPZ, $idCar);
+    Model::editCar($SPZ, $idCar);
 }
 
 $GetCars = Model::getCarById($idCar);
@@ -35,24 +34,12 @@ $GetCars = Model::getCarById($idCar);
         </div>
         <div class="card-content">
           <form class="col s12">
+
             <div class="row">
               <div class="input-field col s12">
                 <label for="type">Typ</label><br>
-                
-                <select id="type" name="type">
-                <?php
-  foreach ($cars as $car) {
-      if ($car['id_car'] == $GetCars['id_car']
-   ) {
-          ?> <option value="<?= $car['id_car'] ?> " selected><?= $car['type'] ?></option>
-                  <?php continue;
-      } ?>
-                  <option value="<?= $car['id_car'] ?>"><?= $car['type'] ?></option>
-
-                  <?php
-  }
-?>     </select><br>
-              </div>
+                <input type="text" name="SPZ" class="form-control" id="SPZ" value="<?= $GetCars['type'] ?> "disabled>
+                </div>
             </div>
 
             <div class="row">
