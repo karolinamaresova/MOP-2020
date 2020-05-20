@@ -30,7 +30,44 @@ $cars = Model::getAllCars();
 
     <div class="card-content">
         <div class="table-responsive">
+            <?php if (in_array($_SESSION["userRole"], array(1, 3))) { ?>
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Typ vozidla</th>
+                        <th>SPZ</th>
+                        <th>KM celkem</th>
+                        <th><i class="fa fa-edit small"></i></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($cars as $car) {
+                    ?> <tr>
+                        <td><?= $car['id_car'] ?></td>
+                        <td><?= $car['type'] ?></a></td>
+                        <td><?= $car['SPZ'] ?></td>
+                        <td><?= $car['total_km'] ?></td>
+                        <td>
+                            <a href="edit_car.php?id_car=<?= $car['id_car'] ?>"><i class="fa fa-edit"></i></a>
+                        </td>
+
+                    </tr>
+                    <?php
+                    }
+
+                    ?>
+
+                </tbody>
+            </table>
+
+            <?php } else { ?>
+            
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -43,24 +80,28 @@ $cars = Model::getAllCars();
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($cars as $car) {
-                    ?> <tr>
-                            <td><?= $car['id_car'] ?></td>
-                            <td><?= $car['type'] ?></a></td>
-                            <td><a href="carDetail.php?id_car=<?= $car['id_car'] ?>"><?= $car['SPZ'] ?></td>
-                            <td><?= $car['total_km'] ?></td>
-                            
+               foreach ($cars as $car) {
+               ?> <tr>
+                        <td><?= $car['id_car'] ?></td>
+                        <td><?= $car['type'] ?></a></td>
+                        <td><a href="carDetail.php?id_car=<?= $car['id_car'] ?>"><?= $car['SPZ'] ?></td>
+                        <td><?= $car['total_km'] ?></td>
+                        
 
-                        </tr>
+                    </tr>
                     <?php
-                    }
+               }
 
-                    ?>
+               ?>
 
                 </tbody>
             </table>
+            <?php
+                    }
+                    ?>
         </div>
 
         <?php
 
         include_once "footer.php";
+        

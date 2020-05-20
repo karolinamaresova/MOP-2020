@@ -71,7 +71,7 @@ $currUser = $currUserArr['firstname'] . ' ' . $currUserArr['surname'];
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <?php if (in_array($_SESSION["userRole"], array(1, 2, ))){?>
+                    <?php if (in_array($_SESSION["userRole"], array(1, 2,3 ))){?>
                     <li>
                         <a href="cars.php" class="waves-effect waves-dark">
                             <i class="fa fa-truck"></i></i>Vozidla</a>

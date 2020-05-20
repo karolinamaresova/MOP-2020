@@ -77,7 +77,6 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                     <tr>
                                         <th>ID jízdy</th>
                                         <th>Vozidlo</th>
-                                        <th>Uživatel</th>
                                         <th>Čas a datum odjezdu</th>
                                         <th>Čas a datum příjezdu</th>
                                         <th>Místo odjezdu</th>
@@ -85,7 +84,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
                                         <th>Počet kilometrů</th>
                                         <th>Poznámka</th>
                                         <th>Status</th>
-                                        <th></th>
+                                        <th><i class="fa fa-edit small"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,7 +94,6 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
 
                                             <td><?= $driverRide['id_ride'] ?></td>
                                             <td><?= $driverRide['type'] . " " . $driverRide['SPZ'] ?></td>
-                                            <th><?= $driverRide['firstname'] . " " . $driverRide['surname'] ?></td>
                                             <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_left'])) ?></td>
                                             <td><?= date("j.n.Y - G:i:s", strtotime($driverRide['time_arrived'])) ?></td>
                                             <td><?= $driverRide['place_left'] ?></td>
@@ -106,7 +104,7 @@ if (!in_array($_SESSION["userRole"], array(1, 4))) {
 
 
                                             <td>
-                                                <a href="edit_ride.php?id_ride=<?= $driverRide['id_ride'] ?>">edit </a>
+                                                <a href="edit_ride.php?id_ride=<?= $driverRide['id_ride'] ?>"><i class="fa fa-edit"></i></a>
                                             </td>
                                         </tr>
                                     <?php

@@ -1,5 +1,9 @@
 <?php
 include_once 'header.php';
+if (!in_array($_SESSION["userRole"], array(1, 2))) {
+    header("location: index.php?restcrict=1");
+}
+
 
 $carRides = Model::getRidesByCar(filter_input(INPUT_GET, 'id_car'));
 ?>

@@ -47,17 +47,35 @@ $ride = Model::getRideById($id_ride);
         </div>
         <div class="card-content">
           <form class="col s12">
+
+
+            <?php  if (in_array($_SESSION["userRole"], array(4))) {
+            $getUsersCars = Model::getCarsByUserId($_SESSION['userId']['id_user']);
+            $currentUser = Model::getUserById($_SESSION['userId']['id_user']);?>
             <div class="row">
               <div class="input-field col s12">
                 <label for="name">User</label><br>
-                <input type="text" name="user" class="form-control" value="<?= $ride['id_user'] ?>">
+                <input type="text" name="user" class="form-control" value="<?= $ride['id_user'] ?>" disabled>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <label for="name">ID Car</label><br>
-                <input type="text" name="car" class="form-control" value="<?= $ride['id_car'] ?>">
+              <label for="type">Typ</label><br>
+                
+                <select id="type" name="type">
+                <?php
+  foreach ($getUsersCars as $car) {
+      if ($car['id_car'] == $ride['id_car']
+   ) {
+          ?> <option value="<?= $car['id_car'] ?> " selected><?= $car['type'] ?></option>
+                  <?php continue;
+      } ?>
+                  <option value="<?= $car['id_car'] ?>"><?= $car['type'] ?></option>
+
+                  <?php
+  }
+?>     </select><br>
 
               </div>
             </div>
@@ -115,11 +133,11 @@ $ride = Model::getRideById($id_ride);
             <div class="row">
               <div class="input-field col s12">
                 <label for="name">Status</label><br>
-              
+
                 <select id="state" name="state">
                   <option value="aktivní" selected>Aktivní</option>
                   <option value="neaktivní">Neaktivní</option>
-                  </select><br>
+                </select><br>
               </div>
             </div>
             <br>
@@ -127,6 +145,7 @@ $ride = Model::getRideById($id_ride);
               <i class="material-icons right">send</i>
             </button>
           </form>
+          <?php } ?>
           <div class="clearBoth"></div>
         </div>
       </div>

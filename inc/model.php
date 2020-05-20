@@ -279,8 +279,6 @@ class Model
         $sql1 = "SELECT id_ride FROM rides ORDER BY id_ride DESC LIMIT 1";
         $result1 = Database::query($sql1);
         $ride =  $result1->fetch_assoc();
-        
-        var_dump($sql);
 
          $sql2 = sprintf("INSERT INTO users_rides (id_user, id_ride)
         VALUES ('$idUser', '%s')", $ride['id_ride']);
