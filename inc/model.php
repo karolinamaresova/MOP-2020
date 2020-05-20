@@ -79,12 +79,7 @@ class Model
         }
     }
 
-    /**
-     * Gets user info by ID.
-     *
-     * @param int $idUser ID of the user.
-     * @return array Containing user info.
-     */
+    
     public static function getUserById($idUser)
     {
         $sql = "SELECT * FROM users
@@ -203,6 +198,7 @@ class Model
         SPZ = '$SPZ'
         WHERE id_car = $idCar ";
         return  Database::query($sql);
+       
     }
 
     

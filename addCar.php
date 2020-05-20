@@ -22,7 +22,7 @@ if (isset($submit)) {
     if ($isAdded) {
         echo "zápis proběhl v pořádku";
     } else {
-        echo "něco se pos*alo";
+        echo "nefunguje to";
     }
 }
 
