@@ -243,6 +243,17 @@ class Model
             WHERE id_ride = $id_ride";
 
         return  Database::query($sql);
+
+        $sql1 = "UPDATE users_rides SET
+                id_user = '$idUser',
+                id_ride = '$id_ride'
+                WHERE id_ride = $id_ride";
+
+        $result1 = Database::query($sql1);
+        return $result1;
+
+        
+    
     }
 
     public static function addCar($type, $SPZ)

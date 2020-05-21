@@ -8,8 +8,8 @@ $roleName = Model::getUserRoleName( $_SESSION["userRole"]);
 ?>
  
  
-  
- <img src="https://www.tapa-global.org/fileadmin/_processed_/csm_4-1_9589c2a54c.png" alt="trucks">
+  <h1><b>Vítejte</b></h1><br>
+ <img class="trucks" src="https://www.freightlink.co.uk/sites/default/files/styles/news_main/adaptive-image/public/field/image/eurotunnel-coquelles-truck-park.jpg?itok=yUM8eX46" alt="trucks">
   
 <?php 
 
